@@ -1,0 +1,19 @@
+{
+  "name": "cloudbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend:start": "npm start --prefix cloudbook",
+    "backend:start": "npm start --prefix backend",
+    "start": "concurrently \"npm run frontend:start\" \"npm run backend:start\"",
+    "both": "npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
