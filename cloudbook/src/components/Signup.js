@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Signup = (props) => {
-  const showAlert = props;
+  const { showAlert } = props;
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -10,6 +10,39 @@ const Signup = (props) => {
     cpassword: "",
   });
   let navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+    document.body.style.fontFamily = "Arial, sans-serif";
+    document.body.style.overflow = "hidden"; // Ensure no scrollbars appear
+
+    const styleSheet = document.styleSheets[0];
+    const keyframes = `
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    `;
+    styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+
+    document.body.style.background =
+      "linear-gradient(270deg, #fbc2eb, #a6c1ee)";
+    document.body.style.backgroundSize = "400% 400%";
+    document.body.style.animation = "gradient 15s ease infinite";
+
+    return () => {
+      document.body.style.background = "";
+      document.body.style.animation = "";
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
