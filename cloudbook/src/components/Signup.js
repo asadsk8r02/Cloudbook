@@ -43,7 +43,7 @@ const Signup = (props) => {
 
   return (
     <div className="container mt-3">
-      <h2>Login to continue to Cloudbook</h2>
+      <h2>Create an account to continue to Cloudbook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
