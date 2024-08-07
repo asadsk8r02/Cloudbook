@@ -42,7 +42,8 @@ const Signup = (props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-3">
+      <h2>Login to continue to Cloudbook</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
